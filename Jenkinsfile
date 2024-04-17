@@ -27,7 +27,9 @@ pipeline {
     stage('Construindo imagem docker'){
       steps{
         echo 'Construindo imagem Docker na Registry Local'
-        imagemDspace = docker.build("dspace-back:${VERSAO_DSPACE}")
+        script{
+          imagemDspace = docker.build("dspace-back:${VERSAO_DSPACE}")
+        }
       }
     }
   }

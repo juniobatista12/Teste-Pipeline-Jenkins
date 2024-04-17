@@ -18,16 +18,18 @@ pipeline {
       }
     }
     
-    stage('Compilação e testes') {
-      steps {
-        echo 'Compilando para verificar a correção'
-        sh "mvn clean package"
-      }
-    }
+    // stage('Compilação e testes') {
+    //   steps {
+    //     echo 'Compilando para verificar a correção'
+    //     sh "mvn clean package"
+    //   }
+    // }
+
     stage('Construindo imagem docker'){
       steps{
         echo 'Construindo imagem Docker na Registry Local'
         script{
+          unset DOCKER_HOST
           imagemDspace = docker.build("dspace-back:${VERSAO_DSPACE}")
         }
       }

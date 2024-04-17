@@ -21,7 +21,7 @@ pipeline {
     stage('Compilação e testes') {
       steps {
         echo 'Compilando para verificar a correção'
-        echo '${VERSAO_POM}'
+        echo "${VERSAO_POM}"
       }
     }
   }

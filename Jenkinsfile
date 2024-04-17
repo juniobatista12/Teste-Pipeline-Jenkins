@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Construindo imagem docker'){
       steps{
-        def imagemDspace = docker.build("dspace-back:${VERSAO_DSPACE}")
+        imagemDspace = docker.build("dspace-back:${VERSAO_DSPACE}")
       }
     }
   }

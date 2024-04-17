@@ -24,5 +24,10 @@ pipeline {
         sh "mvn clean package"
       }
     }
+    stage('Construindo imagem docker'){
+      steps{
+        docker.build("dspace-back:${VERSAO_DSPACE}")
+      }
+    }
   }
 }

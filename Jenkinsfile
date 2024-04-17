@@ -29,7 +29,7 @@ pipeline {
       steps{
         echo 'Construindo imagem Docker na Registry Local'
         script{
-          unset DOCKER_HOST
+          DOCKER_HOST = ""
           imagemDspace = docker.build("dspace-back:${VERSAO_DSPACE}")
         }
       }

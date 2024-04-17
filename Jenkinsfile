@@ -13,7 +13,7 @@ pipeline {
         echo 'Atualizando git'
         checkout scm
         script{
-          def VERSAO_POM = readMavenPom().getVersion()
+          VERSAO_POM = readMavenPom().getVersion()
         }
       }
     }
